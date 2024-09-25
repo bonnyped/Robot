@@ -6,33 +6,33 @@
 
 Робот описывается классом Robot. Вы можете пользоваться следующими его методами (реализация вам неизвестна):
 
-public class Robot {
+    public class Robot {
 
-    public Direction getDirection() {
-        // текущее направление взгляда
-    }
+        public Direction getDirection() {
+            // текущее направление взгляда
+        }
 
-    public int getX() {
-        // текущая координата X
-    }
+        public int getX() {
+            // текущая координата X
+        }
     
-    public int getY() {
-        // текущая координата Y
-    }
+        public int getY() {
+            // текущая координата Y
+        }
     
-    public void turnLeft() {
-        // повернуться на 90 градусов против часовой стрелки
-    }
+        public void turnLeft() {
+            // повернуться на 90 градусов против часовой стрелки
+        }
     
-    public void turnRight() {
-        // повернуться на 90 градусов по часовой стрелке
-    }
+        public void turnRight() {
+            // повернуться на 90 градусов по часовой стрелке
+        }
     
-    public void stepForward() {
-        // шаг в направлении взгляда
-        // за один шаг робот изменяет одну свою координату на единицу
+        public void stepForward() {
+            // шаг в направлении взгляда
+            // за один шаг робот изменяет одну свою координату на единицу
+        }
     }
-}
 
 Direction, направление взгляда робота,  — это перечисление:
 public enum Direction {
@@ -44,6 +44,7 @@ public enum Direction {
 
 
 Как это  выглядит:
+
 ![image](https://github.com/user-attachments/assets/e83b2dd7-2829-4e9b-8408-16ca4f1f65c6)
 
 
