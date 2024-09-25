@@ -1,9 +1,15 @@
 public class Robot {
     public enum Direction {UP, DOWN, LEFT, RIGHT}
 
-    private Direction currentDirection = UP;
+    private Direction currentDirection = Direction.UP;
     private int currentX = 0;
     private int currentY = 0;
+
+    public Robot(Direction direction, int x, int y) {
+        currentDirection = direction;
+        currentX = x;
+        currentY = y;
+    }
 
     public Direction getDirection() {
         return currentDirection;
@@ -20,16 +26,16 @@ public class Robot {
     public void turnLeft() {
         switch (currentDirection) {
             case UP:
-                currentDirection = LEFT;
+                currentDirection = Direction.LEFT;
                 break;
             case LEFT:
-                currentDirection = DOWN;
+                currentDirection = Direction.DOWN;
                 break;
             case DOWN:
-                currentDirection = RIGHT;
+                currentDirection = Direction.RIGHT;
                 break;
             case RIGHT:
-                currentDirection = UP;
+                currentDirection = Direction.UP;
                 break;
         }
     } // повернуться на 90 градусов против часовой стрелки
@@ -37,16 +43,16 @@ public class Robot {
     public void turnRight() {
         switch (currentDirection) {
             case UP:
-                currentDirection = RIGHT;
+                currentDirection = Direction.RIGHT;
                 break;
             case LEFT:
-                currentDirection = UP;
+                currentDirection = Direction.UP;
                 break;
             case DOWN:
-                currentDirection = LEFT;
+                currentDirection = Direction.LEFT;
                 break;
             case RIGHT:
-                currentDirection = DOWN;
+                currentDirection = Direction.DOWN;
                 break;
         }
     } // повернуться на 90 градусов по часовой стрелке
@@ -68,4 +74,10 @@ public class Robot {
         }
     }   // шаг в направлении взгляда
     // за один шаг робот изменяет одну свою координату на единицу
+
+    public void moveRobot(Robot robot, int x, int y) {
+        System.out.println(robot.getDirection());
+        System.out.println(robot.getX());
+        System.out.println(robot.getY());
+    }
 }
