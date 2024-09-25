@@ -1,6 +1,4 @@
 public class Robot {
-    public enum Direction {UP, DOWN, LEFT, RIGHT}
-
     private Direction currentDirection = Direction.UP;
     private int currentX = 0;
     private int currentY = 0;
@@ -73,11 +71,17 @@ public class Robot {
                 break;
         }
     }   // шаг в направлении взгляда
+
+    public void moveRobot(Robot robot, int toX, int toY) {
+        Direction purposeX = (robot.getX() - toX > 0 ? Direction.LEFT : Direction.RIGHT); // определяем направление движения по Х
+        while (robot.getDirection() != purposeX) turnRight();  // вертим до целевого направления по Х
+        while (robot.getX() != toX) stepForward(); // шагаем до точки по Х
+
+        Direction purposeY = (robot.getY() - toY > 0 ? Direction.DOWN : Direction.UP); // те же шаги, только по Y
+        while (robot.getDirection() != purposeY) turnRight();
+        while (robot.getY() != toY) stepForward();
+    }
     // за один шаг робот изменяет одну свою координату на единицу
 
-    public void moveRobot(Robot robot, int x, int y) {
-        System.out.println(robot.getDirection());
-        System.out.println(robot.getX());
-        System.out.println(robot.getY());
-    }
+    public enum Direction {UP, DOWN, LEFT, RIGHT}
 }
